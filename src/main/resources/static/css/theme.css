@@ -1,0 +1,41 @@
+body{
+    background-color: grey;
+}
+
+nav{
+    background-image: url("../img/bg/space.png");
+    background-attachment: fixed;
+    background-position: left;
+    vertical-align: middle;
+}
+
+body{
+    color:white;
+}
+
+@font-face {
+    font-family: "SpaceFont";
+    src: url("../fonts/SGALS.ttf");
+}
+
+@font-face {
+    font-family: "Chargen";
+    src: url("../fonts/6809 chargen.ttf");
+}
+
+@media screen and (max-width:992px){
+    body {
+        margin-top:15%;
+    }
+}
+
+@media screen and (min-width:992px){
+    body {
+        margin-top:5.5%;
+    }
+}
+
+.error{
+    display: block;
+    color: red;
+}

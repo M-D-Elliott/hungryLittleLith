@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <div th:replace="~{shared :: head(title=${title})}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hungry 'lil Lith</title>
+    </div>
+</head>
+
+<body>
+    <div th:replace="~{shared :: nav(isFixed=true)}"></div>
+    <div class="nav container">
+        <ul class="tabs nav nav-tabs">
+            <li><a href="/score/top" th:href="'/score/top/'" th:classappend="(${pageID} == 'top') ? active : ''">Top
+                    Scores</a></li>
+            <li><a href="/score/new/true" th:href="'/score/new/true'"
+                    th:classappend="(${pageID} == 'new/true') ? active : ''">Approved Scores</a></li>
+            <li><a href="/score/new/false" th:href="'/score/new/false'"
+                    th:classappend="(${pageID} == 'new/false') ? active : ''">Unapproved Scores</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="row justify-content-space-between pagination">
+            <a href="/score/top" th:href="${'/score/' + pageID + '/page/' + (pageNumber - 1)}" class="btn btn-primary"
+                th:classappend="(${pageNumber} <= 0) ? disabled : ''">Prev</a>
+            <a href="/score/top" th:href="${'/score/' + pageID + '/page/' + (pageNumber + 1)}" class="btn btn-primary"
+                th:classappend="(${isLastPage}) ? disabled : ''">Next</a>
+        </div>
+        <table class="table table-sm table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Score</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Platform</th>
+                    <th scope="col">Replays</th>
+                    <th sec:authorize="hasRole('ROLE_ADMIN')" scope="col">Admin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="score : ${scores}">
+                    <tr class="accordion-toggle">
+                        <td th:text="${score.value}">Score</td>
+                        <td th:text="${score.playerName}">Username</td>
+                        <td th:text="${score.date}">Date</td>
+                        <td th:text="${score.platform}">Platform</td>
+                        <td><a class="btn btn-primary showReplays" data-toggle="collapse" th:data-scoreID="${score.ID}"
+                                th:data-target="${'#collapseReplays' + score.ID}" data-target="">Show replays</a></td>
+                        <td>
+                            <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+                                <div class="scoreDeleteErrors error"></div>
+                                <!-- onSubmit="approveScore(this); return false;" -->
+                                <form th:if="(${pageID} == 'new/false')" method="POST"
+                                    th:action="${'/api/score/approve'}" th:object="${score}"
+                                    style="display:inline;">
+                                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"
+                                        class="csrf">
+                                    <input type="hidden" class="form-control approveScoreID" th:name="scoreID"
+                                        th:value="${score.ID}">
+                                    <input type="hidden" class="form-control approveScorePlayerName" th:name="playerName"
+                                        th:value="${score.playerName}">
+                                    <div class="form-group">
+                                        <button type="button" onClick="approveScore(this.parentNode.parentNode);" class="btn btn-danger">Approve</button>
+                                    </div>
+                                </form>
+                                <!-- onSubmit="deleteScore(this); return false;" -->
+                                <form method="POST" th:action="${'/api/score/' + score.ID + '/delete'}"
+                                    th:object="${score}" style="display:inline;">
+                                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"
+                                        class="csrf">
+                                    <input type="hidden" class="form-control deleteScoreID" th:name="scoreID"
+                                        th:value="${score.ID}">
+                                    <div class="form-group">
+                                        <button type="button" onClick="deleteScore(this.parentNode.parentNode);" class="btn btn-danger">Delete</button>
+                                    </div>
+                                </form>
+                            </sec>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <div th:id="${'collapseReplays'+ score.ID}" id="" class="collapse">
+                                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"
+                                    class="csrf">
+                                <ul class="list-unstyled">
+                                    <li class="removeMe">Fetching Replays...</li>
+                                </ul>
+                                <div class="replayAddErrors error"></div>
+                                <form method="POST" onSubmit="addReplay(this); return false;"
+                                    sec:authorize="isAuthenticated()" th:if="${#authentication.getPrincipal().getUsername() == score.playerName}">
+                                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" class="csrf">
+                                    <input type="hidden" class="form-control addReplayScoreID" th:name="scoreID" th:value="${score.ID}">
+                                    <input type="hidden" class="form-control addReplayPlayerUsername" th:name="player_Username"
+                                        th:value="${#authentication.getPrincipal().getUsername()}" />
+                                        <span class="form-group">
+                                            <label>Url: </label>
+                                            <input type="url" th:name="url" class="addReplayUrl">
+                                        </span>
+                                    <span class="form-group">
+                                        <button type="submit" class="btn btn-primary">Add</button>
+                                    </span>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
+        <div class="row justify-content-space-between pagination">
+            <a href="/score/top" th:href="${'/score/' + pageID + '/page/' + (pageNumber - 1)}" class="btn btn-primary"
+                th:classappend="(${pageNumber} <= 0) ? disabled : ''">Prev</a>
+            <a href="/score/top" th:href="${'/score/' + pageID + '/page/' + (pageNumber + 1)}" class="btn btn-primary"
+                th:classappend="(${isLastPage}) ? disabled : ''">Next</a>
+        </div>
+    </div>
+    <div th:replace="~{shared :: footer}"></div>
+    <script th:src="'/js/score/list.js'"></script>
+    <div th:replace="~{shared :: jsPlugins}"></div>
+</body>
+
+</html>

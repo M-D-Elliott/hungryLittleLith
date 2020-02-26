@@ -1,0 +1,7 @@
+com\sg\hungrylillithrestservice\AppTest.class
+com\sg\hungrylillithrestservice\dao\PlayerRepositoryTest.class
+com\sg\hungrylillithrestservice\dao\ReplayRepositoryTest.class
+com\sg\hungrylillithrestservice\service\ScoreServiceTest.class
+com\sg\hungrylillithrestservice\service\PlayerServiceTest.class
+com\sg\hungrylillithrestservice\service\ReplayServiceTest.class
+com\sg\hungrylillithrestservice\dao\ScoreRepositoryTest.class

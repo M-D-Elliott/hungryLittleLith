@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <div th:replace="~{shared :: head(title='game')}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hungry 'lil Lith</title>
+    </div>
+    <link rel="stylesheet" type="text/css" href="../../static/css/game.css" th:href="'/css/game.css'">
+    <link rel="stylesheet" type="text/css" href="../../static/css/resolutions.css" th:href="'/css/resolutions.css'">
+    <link rel="stylesheet" href="../../static/css/theme.css" th:if="false">
+</head>
+
+<body>
+    <div th:replace="~{shared :: nav(isFixed=false)}"></div>
+    <main class="container">
+        <div id="gameContainer" class="row">
+            <canvas id="gameCanvas">
+                Canvas not supported
+                <!-- lith -->
+                <img src="../../static/img/lith/lith.png" th:src="'/img/lith/lith.png'" id="lith1" alt="">
+                <img src="../../static/img/lith/lith2.png" th:src="'/img/lith/lith2.png'" id="lith2" alt="">
+                <img src="../../static/img/lith/lith3.png" th:src="'/img/lith/lith3.png'" id="lith3" alt="">
+                <img src="../../static/img/lith/lith4.png" th:src="'/img/lith/lith4.png'" id="lith4" alt="">
+                <img src="../../static/img/lith/lith5.png" th:src="'/img/lith/lith5.png'" id="lith5" alt="">
+                <img src="../../static/img/lith/lith6.png" th:src="'/img/lith/lith6.png'" id="lith6" alt="">
+                <img src="../../static/img/lith/lith7.png" th:src="'/img/lith/lith7.png'" id="lith7" alt="">
+                <img src="../../static/img/lith/lith8.png" th:src="'/img/lith/lith8.png'" id="lith8" alt="">
+                <img src="../../static/img/astlith/astlith1.png" th:src="'/img/astlith/astlith1.png'" id="astlith1"
+                    alt="">
+                <img src="../../static/img/astlith/astlith2.png" th:src="'/img/astlith/astlith2.png'" id="astlith2"
+                    alt="">
+                <img src="../../static/img/astlith/astlith3.png" th:src="'/img/astlith/astlith3.png'" id="astlith3"
+                    alt="">
+                <img src="../../static/img/astlith/astlith4.png" th:src="'/img/astlith/astlith4.png'" id="astlith4"
+                    alt="">
+                <img src="../../static/img/astlith/astlith5.png" th:src="'/img/astlith/astlith5.png'" id="astlith5"
+                    alt="">
+                <img src="../../static/img/astlith/astlith6.png" th:src="'/img/astlith/astlith6.png'" id="astlith6"
+                    alt="">
+                <img src="../../static/img/astlith/astlith7.png" th:src="'/img/astlith/astlith7.png'" id="astlith7"
+                    alt="">
+                <img src="../../static/img/astlith/astlith8.png" th:src="'/img/astlith/astlith8.png'" id="astlith8"
+                    alt="">
+                <img src="../../static/img/moonlith/moonlith1.png" th:src="'/img/moonlith/moonlith1.png'" id="moonlith1"
+                    alt="">
+                <img src="../../static/img/moonlith/moonlith2.png" th:src="'/img/moonlith/moonlith2.png'" id="moonlith2"
+                    alt="">
+                <img src="../../static/img/moonlith/moonlith3.png" th:src="'/img/moonlith/moonlith3.png'" id="moonlith3"
+                    alt="">
+                <img src="../../static/img/moonlith/moonlith4.png" th:src="'/img/moonlith/moonlith4.png'" id="moonlith4"
+                    alt="">
+                <img src="../../static/img/moonlith/moonlith5.png" th:src="'/img/moonlith/moonlith5.png'" id="moonlith5"
+                    alt="">
+                <img src="../../static/img/moonlith/moonlith6.png" th:src="'/img/moonlith/moonlith6.png'" id="moonlith6"
+                    alt="">
+                <img src="../../static/img/moonlith/moonlith7.png" th:src="'/img/moonlith/moonlith7.png'" id="moonlith7"
+                    alt="">
+                <img src="../../static/img/moonlith/moonlith8.png" th:src="'/img/moonlith/moonlith8.png'" id="moonlith8"
+                    alt="">
+                <img src="../../static/img/planetlith/planetlith1.png" th:src="'/img/planetlith/planetlith1.png'"
+                    id="planetlith1" alt="">
+                <img src="../../static/img/planetlith/planetlith2.png" th:src="'/img/planetlith/planetlith2.png'"
+                    id="planetlith2" alt="">
+                <img src="../../static/img/planetlith/planetlith3.png" th:src="'/img/planetlith/planetlith3.png'"
+                    id="planetlith3" alt="">
+                <img src="../../static/img/planetlith/planetlith4.png" th:src="'/img/planetlith/planetlith4.png'"
+                    id="planetlith4" alt="">
+                <img src="../../static/img/planetlith/planetlith5.png" th:src="'/img/planetlith/planetlith5.png'"
+                    id="planetlith5" alt="">
+                <img src="../../static/img/planetlith/planetlith6.png" th:src="'/img/planetlith/planetlith6.png'"
+                    id="planetlith6" alt="">
+                <img src="../../static/img/planetlith/planetlith7.png" th:src="'/img/planetlith/planetlith7.png'"
+                    id="planetlith7" alt="">
+                <img src="../../static/img/planetlith/planetlith8.png" th:src="'/img/planetlith/planetlith8.png'"
+                    id="planetlith8" alt="">
+                <img src="../../static/img/starlith/starlith1.png" th:src="'/img/starlith/starlith1.png'" id="starlith1"
+                    alt="">
+                <img src="../../static/img/starlith/starlith2.png" th:src="'/img/starlith/starlith2.png'" id="starlith2"
+                    alt="">
+                <img src="../../static/img/starlith/starlith3.png" th:src="'/img/starlith/starlith3.png'" id="starlith3"
+                    alt="">
+                <img src="../../static/img/starlith/starlith4.png" th:src="'/img/starlith/starlith4.png'" id="starlith4"
+                    alt="">
+                <img src="../../static/img/starlith/starlith5.png" th:src="'/img/starlith/starlith5.png'" id="starlith5"
+                    alt="">
+                <img src="../../static/img/starlith/starlith6.png" th:src="'/img/starlith/starlith6.png'" id="starlith6"
+                    alt="">
+                <img src="../../static/img/starlith/starlith7.png" th:src="'/img/starlith/starlith7.png'" id="starlith7"
+                    alt="">
+                <img src="../../static/img/starlith/starlith8.png" th:src="'/img/starlith/starlith8.png'" id="starlith8"
+                    alt="">
+                <img src="../../static/img/gallith/gallith1.png" th:src="'/img/gallith/gallith1.png'" id="gallith1"
+                    alt="">
+                <img src="../../static/img/gallith/gallith2.png" th:src="'/img/gallith/gallith2.png'" id="gallith2"
+                    alt="">
+                <img src="../../static/img/gallith/gallith3.png" th:src="'/img/gallith/gallith3.png'" id="gallith3"
+                    alt="">
+                <img src="../../static/img/gallith/gallith4.png" th:src="'/img/gallith/gallith4.png'" id="gallith4"
+                    alt="">
+                <img src="../../static/img/gallith/gallith5.png" th:src="'/img/gallith/gallith5.png'" id="gallith5"
+                    alt="">
+                <img src="../../static/img/gallith/gallith6.png" th:src="'/img/gallith/gallith6.png'" id="gallith6"
+                    alt="">
+                <img src="../../static/img/gallith/gallith7.png" th:src="'/img/gallith/gallith7.png'" id="gallith7"
+                    alt="">
+                <img src="../../static/img/gallith/gallith8.png" th:src="'/img/gallith/gallith8.png'" id="gallith8"
+                    alt="">
+
+                <!-- enemies -->
+                <img src="../../static/img/celestial/stardust.png" th:src="'/img/celestial/stardust.png'" id="c1"
+                    alt="">
+                <img src="../../static/img/celestial/asteroid.png" th:src="'/img/celestial/asteroid.png'" id="c2"
+                    alt="">
+                <img src="../../static/img/celestial/moon.png" th:src="'/img/celestial/moon.png'" id="c3" alt="">
+                <img src="../../static/img/celestial/planet.png" th:src="'/img/celestial/planet.png'" id="c4" alt="">
+                <img src="../../static/img/celestial/star.png" th:src="'/img/celestial/star.png'" id="c5" alt="">
+                <img src="../../static/img/celestial/galaxy.png" th:src="'/img/celestial/galaxy.png'" id="c6" alt="">
+
+                <!-- bg -->
+                <img src="../../static/img/bg/space.png" th:src="'/img/bg/space.png'" id="bg1" alt="">
+                <img src="../../static/img/bg/titleImage.png" th:src="'/img/bg/titleImage.png'" id="titleImage" alt="">
+
+            </canvas>
+        </div>
+    </main>
+
+    <div th:replace="~{shared :: footer}"></div>
+
+    <!-- sound -->
+    <div id="gameSound" style="display:none;">
+        <audio src="../../static/sound/flutter.mp3" th:src="'/sound/flutter.mp3'" autoplay=false muted=true
+            type="audio/mp3" id="flutter" loop=true></audio>
+        <audio src="../../static/sound/spaceCruise.mp3" th:src="'/sound/spaceCruise.mp3'" autoplay=false muted=true
+            type="audio/mp3" id="spaceCruise" loop=true></audio>
+        <audio src="../../static/sound/menuMusic.mp3" th:src="'/sound/menuMusic.mp3'" autoplay=false muted=true
+            type="audio/mp3" id="menuMusic" loop="true"></audio>
+        <audio src="../../static/sound/powerUp.mp3" th:src="'/sound/powerUp.mp3'" autoplay=false muted=true
+            type="audio/mp3" id="powerUp" loop=false></audio>
+        <audio src="../../static/sound/rollOverClick.mp3" th:src="'/sound/rollOverClick.mp3'" autoplay=false muted=true
+            type="audio/mp3" id="rollOverClick" loop=false></audio>
+        <audio src="../../static/sound/startButton.mp3" th:src="'/sound/startButton.mp3'" autoplay=false muted=true
+            type="audio/mp3" id="startButton" loop=false></audio>
+        <audio src="../../static/sound/whoosh.mp3" th:src="'/sound/whoosh.mp3'" autoplay=false muted=true
+            type="audio/mp3" id="whoosh" loop=false></audio>
+        <audio src="../../static/sound/eatTheEnemy.mp3" th:src="'/sound/eatTheEnemy.mp3'" autoplay=false muted=true
+            type="audio/mp3" id="eatTheEnemy" loop=false></audio>
+    </div>
+
+    <!-- world -->
+    <script src="../../static/js/game/globals.js" th:src="'/js/game/globals.js'"></script>
+
+    <script src="../../static/js/game/Listener.js" th:src="'/js/game/Listener.js'"></script>
+    <script src="../../static/js/game/Clock.js" th:src="'/js/game/Clock.js'"></script>
+    <script src="../../static/js/game/SpawnType.js" th:src="'/js/game/SpawnType.js'"></script>
+
+    <!-- screens -->
+    <script src="../../static/js/ui/Image.js" th:src="'/js/ui/Image.js'"></script>
+    <script src="../../static/js/ui/StaticImage.js" th:src="'/js/ui/StaticImage.js'"></script>
+    <script src="../../static/js/ui/VerticallyScrollingImage.js" th:src="'/js/ui/VerticallyScrollingImage.js'"></script>
+    <script src="../../static/js/ui/CenteredImage.js" th:src="'/js/ui/CenteredImage.js'"></script>
+    <script src="../../static/js/game/Environment.js" th:src="'/js/game/Environment.js'"></script>
+
+    <!-- in game objects -->
+    <script src="../../static/js/game/Collideable.js" th:src="'/js/game/Collideable.js'"></script>
+    <script src="../../static/js/game/Mortal.js" th:src="'/js/game/Mortal.js'"></script>
+    <script src="../../static/js/game/SubLith.js" th:src="'/js/game/SubLith.js'"></script>
+    <script src="../../static/js/game/Lith.js" th:src="'/js/game/Lith.js'"></script>
+    <script src="../../static/js/game/Celestial.js" th:src="'/js/game/Celestial.js'"></script>
+
+    <!-- ui -->
+    <script src="../../static/js/ui/TextObject.js" th:src="'/js/ui/TextObject.js'"></script>
+    <script src="../../static/js/ui/TextProgressBar.js" th:src="'/js/ui/TextProgressBar.js'"></script>
+
+    <!-- in game menus and events -->
+    <script src="../../static/js/ui/Menu.js" th:src="'/js/ui/Menu.js'"></script>
+    <script src="../../static/js/ui/DashBoardMenu.js" th:src="'/js/ui/DashBoardMenu.js'"></script>
+    <script src="../../static/js/ui/Button.js" th:src="'/js/ui/Button.js'"></script>
+    <script src="../../static/js/ui/Hint.js" th:src="'/js/ui/Hint.js'"></script>
+    <script src="../../static/js/ui/Splash.js" th:src="'/js/ui/Splash.js'"></script>
+    <script src="../../static/js/ui/WinSplash.js" th:src="'/js/ui/WinSplash.js'"></script>
+    <script src="../../static/js/ui/LeftAlignedCenterSplash.js" th:src="'/js/ui/LeftAlignedCenterSplash.js'"></script>
+    <script src="../../static/js/ui/ScreenEvent.js" th:src="'/js/ui/ScreenEvent.js'"></script>
+    <script src="../../static/js/ui/FlashingScreenEvent.js" th:src="'/js/ui/FlashingScreenEvent.js'"></script>
+
+    <script src="../../static/js/game/fakeSubmit.js" th:src="'/js/game/submit.js'"></script>
+
+    <script src="../../static/js/game/GameState.js" th:src="'/js/game/GameState.js'"></script>
+    <script src="../../static/js/game/SoundTrack.js" th:src="'/js/game/SoundTrack.js'"></script>
+    <script src="../../static/js/game/GameData.js" th:src="'/js/game/GameData.js'"></script>
+    <script src="../../static/js/game/game.js" th:src="'/js/game/game.js'"></script>
+    <!-- <div th:replace="~{shared :: jsPlugins}"></div> -->
+
+</body>
+
+</html>

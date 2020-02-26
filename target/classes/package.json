@@ -1,0 +1,26 @@
+{
+  "name": "hungrylillith",
+  "version": "1.0.0",
+  "description": "a new canvas game!",
+  "main": "y",
+  "scripts": {
+    "test": "hello world"
+  },
+  "repository": {
+    "type": "git",
+    "url": "na"
+  },
+  "keywords": [
+    "y"
+  ],
+  "author": "meekus",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-jshint": "^2.1.0"
+  },
+  "dependencies": {
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0"
+  }
+}

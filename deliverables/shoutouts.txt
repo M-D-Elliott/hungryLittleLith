@@ -1,0 +1,115 @@
+    new Hint([
+        "YO CORBIN!!!",
+        "Don't be blue.",
+        "I'm green!",
+        "@Sensei. Obv. best Instructor..."
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Yo Dev10!"
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Yo Harley!"
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "TARA W!!!"
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Team Danielle!"
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Toast!",
+        "That's you if you face",
+        "Eddy's Ryu!"
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Music by Jerome Pullin! :D",
+        "Flutter is amazing!",
+        "Why aren't you famous?"
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Thomas S.-- a bibliophile,",
+        "a nasty Link, an esteemed coder,",
+        "and he knows about the Kardashev",
+        "scale?!",
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Touger -- world record",
+        "typing speed champion,",
+        "succint wisdom."
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Duncan Henry--",
+        "Master algorithmist,",
+        "145 I.Q. at least,",
+        "exceedingly kind gentleman."
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Mac Ferguson--",
+        "A humble genius,",
+        "a serene perspective,",
+        "coding experience of 10 people!"
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Jacob White...",
+        "will outclass all of",
+        "us in six months time."
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "John Brown",
+        "incarnation of empathy,",
+        "polite to a p,",
+        "and eats code for lunch!"
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Beth Raymond--",
+        "your own personal ghost writer",
+        "and Big Bang Theorist!"
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Nicolas Graese--",
+        "master of the modulus,",
+        "king of efficieny...",
+        "We should make a game together!"
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Julie--",
+        "fellow animator,",
+        "hard worker, hard coder,",
+        "sharp as a tack!"
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Mark C--",
+        "quick as a whip,",
+        "reliable, focused,",
+        "and one nasty DeDeDe!"
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Mayzer--",
+        "a kind heart,",
+        "a warm soul,",
+        "a fellow head-shaver!"
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Joe--",
+        "music lover,",
+        "hell on keys,",
+        "and most stylish Dev10er!"
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Tom--",
+        "reserved, strong",
+        "exceptional gentleman,",
+        "and most handsome Dev10er!"
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Chon--",
+        "THE PEOPLE'S CHAMPION",
+        "'nuff said...'",
+    ], HintType.SHOUTOUTS),
+    new Hint([
+        "Ryan--",
+        "calm and collected,",
+        "devoted husband,",
+        "great musical talent,",
+        "excellent sense of humor."
+    ], HintType.SHOUTOUTS),
